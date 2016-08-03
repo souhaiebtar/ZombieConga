@@ -66,7 +66,7 @@ class GameScene: SKScene {
         //background.position = CGPoint.zero//END
         //background.zRotation = CGFloat(M_PI) / 8 //START rotate by PI/8
         let mySize = background.size
-        print("Size: \(mySize)")
+        //print("Size: \(mySize)")
 
         zombie.position = CGPoint(x: 400, y: 400)
         zombie.zPosition = 100
@@ -79,7 +79,7 @@ class GameScene: SKScene {
         runAction(SKAction.repeatActionForever(
             SKAction.sequence([SKAction.runBlock(spawnCat),
                 SKAction.waitForDuration(1.0)])))
-        debugDrawPlayableArea()
+        //debugDrawPlayableArea()
 
     }
 
@@ -93,7 +93,7 @@ class GameScene: SKScene {
             dt = 0
         }
         lastUpdateTime = currentTime
-        print("\(dt*1000) milliseconds since last update")
+        //print("\(dt*1000) milliseconds since last update")
 
         if let lastTouchLocation = lastTouchLocation {
             let diff = lastTouchLocation - zombie.position
@@ -112,15 +112,17 @@ class GameScene: SKScene {
         moveTrain()
         if lives <= 0 && !gameOver {
             gameOver  = true
-            print("You lose!")
+            //print("You lose!")
             
-            let gameOverScene = GameOverScene(size: size)
+            let gameOverScene = GameOverScene(size: size, won: false)
+            
             gameOverScene.scaleMode = scaleMode
             
-            let reveal = SKTransition.flipVerticalWithDuration(0.5)
-            
+            let reveal = SKTransition.flipHorizontalWithDuration(0.5)
+
             view?.presentScene(gameOverScene, transition: reveal)
-            
+
+
         }
     }
 
@@ -128,7 +130,7 @@ class GameScene: SKScene {
         // 1
         //let amountToMove = CGPoint(x: velocity.x * CGFloat(dt), y: velocity.y * CGFloat(dt))
         let amountToMove = velocity * CGFloat(dt)
-        print("Amount to move: \(amountToMove)")
+        //print("Amount to move: \(amountToMove)")
         // 2
         //sprite.position = CGPoint(x: sprite.position.x + amountToMove.x, y: sprite.position.y + amountToMove.y)
         sprite.position += amountToMove
@@ -356,11 +358,11 @@ class GameScene: SKScene {
             }
             targetPosition = node.position
         }
-        if trainCount >= 5 && !gameOver {
+        if trainCount >= 15 && !gameOver {
             gameOver = true
-            print("You win!")
+            //print("You win!")
             
-            let gameOverScene = GameOverScene(size: size)
+            let gameOverScene = GameOverScene(size: size, won: true)
             gameOverScene.scaleMode = scaleMode
             
             let reveal = SKTransition.flipVerticalWithDuration(0.5)

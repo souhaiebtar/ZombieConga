@@ -34,6 +34,13 @@ class GameOverScene: SKScene {
         background.position = CGPoint(x: self.size.width/2, y: self.size.height/2)
         self.addChild(background)
         
-        
+        let wait = SKAction.waitForDuration(3.0)
+        let block = SKAction.runBlock {
+            let myScene = GameScene(size: self.size)
+            myScene.scaleMode = self.scaleMode
+            let reveal = SKTransition.flipVerticalWithDuration(0.5)
+            self.view?.presentScene(myScene, transition: reveal)
+        }
+        self.runAction(SKAction.sequence([wait, block]))
     }
 }
