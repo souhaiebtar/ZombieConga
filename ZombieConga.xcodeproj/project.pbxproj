@@ -1,0 +1,330 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3514714E1B8E117E0022F82C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3514714D1B8E117E0022F82C /* AppDelegate.swift */; };
+		351471521B8E117E0022F82C /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351471511B8E117E0022F82C /* GameScene.swift */; };
+		351471541B8E117E0022F82C /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351471531B8E117E0022F82C /* GameViewController.swift */; };
+		351471571B8E117E0022F82C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 351471551B8E117E0022F82C /* Main.storyboard */; };
+		351471591B8E117E0022F82C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 351471581B8E117E0022F82C /* Assets.xcassets */; };
+		3514715C1B8E117E0022F82C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3514715A1B8E117E0022F82C /* LaunchScreen.storyboard */; };
+		3589CEC51B90BC58004968E4 /* backgroundMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3589CEC01B90BC58004968E4 /* backgroundMusic.mp3 */; };
+		3589CEC61B90BC58004968E4 /* hitCat.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3589CEC11B90BC58004968E4 /* hitCat.wav */; };
+		3589CEC71B90BC58004968E4 /* hitCatLady.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3589CEC21B90BC58004968E4 /* hitCatLady.wav */; };
+		3589CEC81B90BC58004968E4 /* lose.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3589CEC31B90BC58004968E4 /* lose.wav */; };
+		3589CEC91B90BC58004968E4 /* win.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3589CEC41B90BC58004968E4 /* win.wav */; };
+		35F723E61B8F5B5E006ED4AC /* MyUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F723E51B8F5B5E006ED4AC /* MyUtils.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3514714A1B8E117E0022F82C /* ZombieConga.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZombieConga.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3514714D1B8E117E0022F82C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		351471511B8E117E0022F82C /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		351471531B8E117E0022F82C /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		351471561B8E117E0022F82C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		351471581B8E117E0022F82C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3514715B1B8E117E0022F82C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3514715D1B8E117E0022F82C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3589CEC01B90BC58004968E4 /* backgroundMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backgroundMusic.mp3; sourceTree = "<group>"; };
+		3589CEC11B90BC58004968E4 /* hitCat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hitCat.wav; sourceTree = "<group>"; };
+		3589CEC21B90BC58004968E4 /* hitCatLady.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hitCatLady.wav; sourceTree = "<group>"; };
+		3589CEC31B90BC58004968E4 /* lose.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = lose.wav; sourceTree = "<group>"; };
+		3589CEC41B90BC58004968E4 /* win.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = win.wav; sourceTree = "<group>"; };
+		35F723E51B8F5B5E006ED4AC /* MyUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyUtils.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		351471471B8E117E0022F82C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		351471411B8E117E0022F82C = {
+			isa = PBXGroup;
+			children = (
+				3514714C1B8E117E0022F82C /* ZombieConga */,
+				3514714B1B8E117E0022F82C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3514714B1B8E117E0022F82C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3514714A1B8E117E0022F82C /* ZombieConga.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3514714C1B8E117E0022F82C /* ZombieConga */ = {
+			isa = PBXGroup;
+			children = (
+				3589CEBF1B90BC58004968E4 /* Sounds */,
+				3514714D1B8E117E0022F82C /* AppDelegate.swift */,
+				351471511B8E117E0022F82C /* GameScene.swift */,
+				351471531B8E117E0022F82C /* GameViewController.swift */,
+				351471551B8E117E0022F82C /* Main.storyboard */,
+				351471581B8E117E0022F82C /* Assets.xcassets */,
+				3514715A1B8E117E0022F82C /* LaunchScreen.storyboard */,
+				3514715D1B8E117E0022F82C /* Info.plist */,
+				35F723E51B8F5B5E006ED4AC /* MyUtils.swift */,
+			);
+			path = ZombieConga;
+			sourceTree = "<group>";
+		};
+		3589CEBF1B90BC58004968E4 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				3589CEC01B90BC58004968E4 /* backgroundMusic.mp3 */,
+				3589CEC11B90BC58004968E4 /* hitCat.wav */,
+				3589CEC21B90BC58004968E4 /* hitCatLady.wav */,
+				3589CEC31B90BC58004968E4 /* lose.wav */,
+				3589CEC41B90BC58004968E4 /* win.wav */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		351471491B8E117E0022F82C /* ZombieConga */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 351471601B8E117E0022F82C /* Build configuration list for PBXNativeTarget "ZombieConga" */;
+			buildPhases = (
+				351471461B8E117E0022F82C /* Sources */,
+				351471471B8E117E0022F82C /* Frameworks */,
+				351471481B8E117E0022F82C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZombieConga;
+			productName = ZombieConga;
+			productReference = 3514714A1B8E117E0022F82C /* ZombieConga.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		351471421B8E117E0022F82C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Razeware LLC";
+				TargetAttributes = {
+					351471491B8E117E0022F82C = {
+						CreatedOnToolsVersion = 7.0;
+					};
+				};
+			};
+			buildConfigurationList = 351471451B8E117E0022F82C /* Build configuration list for PBXProject "ZombieConga" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 351471411B8E117E0022F82C;
+			productRefGroup = 3514714B1B8E117E0022F82C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				351471491B8E117E0022F82C /* ZombieConga */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		351471481B8E117E0022F82C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3514715C1B8E117E0022F82C /* LaunchScreen.storyboard in Resources */,
+				3589CEC91B90BC58004968E4 /* win.wav in Resources */,
+				3589CEC61B90BC58004968E4 /* hitCat.wav in Resources */,
+				351471591B8E117E0022F82C /* Assets.xcassets in Resources */,
+				3589CEC81B90BC58004968E4 /* lose.wav in Resources */,
+				3589CEC71B90BC58004968E4 /* hitCatLady.wav in Resources */,
+				3589CEC51B90BC58004968E4 /* backgroundMusic.mp3 in Resources */,
+				351471571B8E117E0022F82C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		351471461B8E117E0022F82C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				351471521B8E117E0022F82C /* GameScene.swift in Sources */,
+				351471541B8E117E0022F82C /* GameViewController.swift in Sources */,
+				3514714E1B8E117E0022F82C /* AppDelegate.swift in Sources */,
+				35F723E61B8F5B5E006ED4AC /* MyUtils.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		351471551B8E117E0022F82C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				351471561B8E117E0022F82C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3514715A1B8E117E0022F82C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3514715B1B8E117E0022F82C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3514715E1B8E117E0022F82C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3514715F1B8E117E0022F82C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		351471611B8E117E0022F82C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ZombieConga/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.razeware.ZombieConga;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		351471621B8E117E0022F82C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ZombieConga/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.razeware.ZombieConga;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		351471451B8E117E0022F82C /* Build configuration list for PBXProject "ZombieConga" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3514715E1B8E117E0022F82C /* Debug */,
+				3514715F1B8E117E0022F82C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		351471601B8E117E0022F82C /* Build configuration list for PBXNativeTarget "ZombieConga" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				351471611B8E117E0022F82C /* Debug */,
+				351471621B8E117E0022F82C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 351471421B8E117E0022F82C /* Project object */;
+}
