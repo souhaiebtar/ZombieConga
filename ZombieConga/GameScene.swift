@@ -28,6 +28,8 @@ class GameScene: SKScene {
     SKAction.playSoundFileNamed( "hitCatLady.wav", waitForCompletion:false)
     var invincible = false
     let catMovePointsPerSec:CGFloat = 480.0
+    var lives = 5
+    var gameOver = false
 
     override init(size : CGSize) {
         let maxAspectRatio:CGFloat = 16.0/9.0 // 1
@@ -108,6 +110,18 @@ class GameScene: SKScene {
         boundsCheckZombie()
         checkCollisions()
         moveTrain()
+        if lives <= 0 && !gameOver {
+            gameOver  = true
+            print("You lose!")
+            
+            let gameOverScene = GameOverScene(size: size)
+            gameOverScene.scaleMode = scaleMode
+            
+            let reveal = SKTransition.flipVerticalWithDuration(0.5)
+            
+            view?.presentScene(gameOverScene, transition: reveal)
+            
+        }
     }
 
     func moveSprite(sprite: SKSpriteNode, velocity: CGPoint){
@@ -276,6 +290,8 @@ class GameScene: SKScene {
 
         enemy.removeFromParent()
         runAction(enemyCollisionSound)
+        loseCats()
+        lives--
         
         invincible = true
         let blinkTimes = 10.0
@@ -323,10 +339,12 @@ class GameScene: SKScene {
     }
     
     func moveTrain(){
+        var trainCount = 0
         var targetPosition = zombie.position
         
         enumerateChildNodesWithName("train"){
             node, _ in
+            trainCount++
             if !node.hasActions() {
                 let actionDuration = 0.3
                 let offset = targetPosition - node.position
@@ -337,6 +355,45 @@ class GameScene: SKScene {
                 node.runAction(moveAction)
             }
             targetPosition = node.position
+        }
+        if trainCount >= 5 && !gameOver {
+            gameOver = true
+            print("You win!")
+            
+            let gameOverScene = GameOverScene(size: size)
+            gameOverScene.scaleMode = scaleMode
+            
+            let reveal = SKTransition.flipVerticalWithDuration(0.5)
+            
+            view?.presentScene(gameOverScene, transition: reveal)
+        }
+    }
+    
+    func loseCats(){
+        // 1
+        var loseCount = 0
+        enumerateChildNodesWithName("train"){
+            node, stop in
+            // 2
+            var randomSpot = node.position
+            randomSpot.x += CGFloat.random(min: -100, max: 100)
+            randomSpot.y += CGFloat.random(min: -100, max: 100)
+            // 3
+            node.name = ""
+            node.runAction(
+                SKAction.sequence([
+                SKAction.group([
+                    SKAction.rotateByAngle(π*4, duration: 1.0),
+                    SKAction.moveTo(randomSpot, duration: 1.0),
+                    SKAction.scaleTo(0, duration: 1.0)
+                    ]),
+                SKAction.removeFromParent()
+                ]))
+            // 4
+            loseCount++
+            if loseCount >= 2 {
+                stop.memory = true
+            }
         }
     }
 
