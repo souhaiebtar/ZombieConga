@@ -27,6 +27,7 @@ class GameScene: SKScene {
     let enemyCollisionSound: SKAction =
     SKAction.playSoundFileNamed( "hitCatLady.wav", waitForCompletion:false)
     var invincible = false
+    let catMovePointsPerSec:CGFloat = 480.0
 
     override init(size : CGSize) {
         let maxAspectRatio:CGFloat = 16.0/9.0 // 1
@@ -66,6 +67,7 @@ class GameScene: SKScene {
         print("Size: \(mySize)")
 
         zombie.position = CGPoint(x: 400, y: 400)
+        zombie.zPosition = 100
         //zombie.setScale(2)
         addChild(zombie)
         //zombie.runAction(SKAction.repeatActionForever(zombieAnimation))
@@ -105,6 +107,7 @@ class GameScene: SKScene {
 
         boundsCheckZombie()
         checkCollisions()
+        moveTrain()
     }
 
     func moveSprite(sprite: SKSpriteNode, velocity: CGPoint){
@@ -258,7 +261,13 @@ class GameScene: SKScene {
 
     func zombieHitCat(cat: SKSpriteNode) {
 
-        cat.removeFromParent()
+        //cat.removeFromParent()
+        cat.name = "train"
+        cat.removeAllActions()
+        cat.setScale(1.0)
+        cat.zRotation = 0
+        let turnGreen = SKAction.colorizeWithColor(SKColor.greenColor(), colorBlendFactor: 1.0, duration: 0.2)
+        cat.runAction(turnGreen)
         runAction(catCollisionSound)
 
     }
@@ -311,6 +320,24 @@ class GameScene: SKScene {
 
             zombieHitEnemy(enemy) }
 
+    }
+    
+    func moveTrain(){
+        var targetPosition = zombie.position
+        
+        enumerateChildNodesWithName("train"){
+            node, _ in
+            if !node.hasActions() {
+                let actionDuration = 0.3
+                let offset = targetPosition - node.position
+                let direction = offset.normalized()
+                let amountToMovePerSec = direction * self.catMovePointsPerSec
+                let amountToMove = amountToMovePerSec * CGFloat(actionDuration)
+                let moveAction = SKAction.moveByX(amountToMove.x, y: amountToMove.y, duration: actionDuration)
+                node.runAction(moveAction)
+            }
+            targetPosition = node.position
+        }
     }
 
 
