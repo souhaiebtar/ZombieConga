@@ -127,3 +127,25 @@ extension CGFloat {
     return CGFloat.random() * (max - min) + min
   }
 }
+
+import AVFoundation
+
+var backgroundMusicPlayer: AVAudioPlayer!
+
+func playBackgroundMusic(filename: String) {
+    let resourceUrl = NSBundle.mainBundle().URLForResource(filename, withExtension: nil)
+    guard let url = resourceUrl else {
+        print("Could not find file: \(filename)")
+        return
+    }
+    
+    do {
+        try backgroundMusicPlayer = AVAudioPlayer(contentsOfURL: url)
+        backgroundMusicPlayer.numberOfLoops = -1
+        backgroundMusicPlayer.prepareToPlay()
+        backgroundMusicPlayer.play()
+    } catch {
+        print("Could not create audio player!")
+        return
+    }
+}
