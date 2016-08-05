@@ -103,18 +103,18 @@ class GameScene: SKScene {
         }
         lastUpdateTime = currentTime
         //print("\(dt*1000) milliseconds since last update")
-
+        /*
         if let lastTouchLocation = lastTouchLocation {
             let diff = lastTouchLocation - zombie.position
             if(diff.length() <= zombieMovePointsPerSec * CGFloat(dt)){
                 zombie.position = lastTouchLocation
                 velocity = CGPointZero
                 stopZombieAnimation()
-            } else {
+            } else {*/
                 moveSprite(zombie, velocity: velocity)
-                rotateSprite(zombie, direction: velocity, rotateRadiansPerSec: zombieRotateRadiansPerSec)
+                rotateSprite(zombie, direction: velocity, rotateRadiansPerSec: zombieRotateRadiansPerSec)/*
             }
-        }
+        }*/
 
         boundsCheckZombie()
         checkCollisions()
@@ -230,14 +230,16 @@ class GameScene: SKScene {
     func spawnEnemy(){
         let enemy = SKSpriteNode(imageNamed: "enemy")
         enemy.name = "enemy"
-        enemy.position = CGPoint(x: size.width + enemy.size.width/2,
+        enemy.position = CGPoint(x: CGRectGetMaxX(cameraRect) + enemy.size.width/2,
             y: CGFloat.random(
-                min: CGRectGetMinY(playableRect) + enemy.size.height/2,
-                max: CGRectGetMaxY(playableRect) - enemy.size.height/2))
+                min: CGRectGetMinY(cameraRect) + enemy.size.height/2,
+                max: CGRectGetMaxY(cameraRect) - enemy.size.height/2))
+        enemy.zPosition = 50
         addChild(enemy)
 
-        let actionMove =
-        SKAction.moveToX(-enemy.size.width/2, duration: 2.0)
+        /*let actionMove =
+        SKAction.moveToX(-enemy.size.width/2, duration: 2.0)*/
+        let actionMove = SKAction.moveByX(-size.width-enemy.size.width*2, y: 0, duration: 2.0)
         let actionRemove = SKAction.removeFromParent()
         enemy.runAction(SKAction.sequence([actionMove, actionRemove]))
     }
@@ -260,10 +262,11 @@ class GameScene: SKScene {
         cat.name = "cat"
 
         cat.position = CGPoint(
-            x: CGFloat.random(min: CGRectGetMinX(playableRect),
-                max: CGRectGetMaxX(playableRect)),
-            y: CGFloat.random(min: CGRectGetMinY(playableRect),
-                max: CGRectGetMaxY(playableRect)))
+            x: CGFloat.random(min: CGRectGetMinX(cameraRect),
+                max: CGRectGetMaxX(cameraRect)),
+            y: CGFloat.random(min: CGRectGetMinY(cameraRect),
+                max: CGRectGetMaxY(cameraRect)))
+        cat.zPosition = 50
         cat.setScale(0)
         addChild(cat)
         // 2
