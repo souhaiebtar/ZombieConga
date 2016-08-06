@@ -1,6 +1,3 @@
-
-
-
 //
 //  GameScene.swift
 //  ZombieConga
@@ -32,6 +29,8 @@ class GameScene: SKScene {
     var gameOver = false
     let cameraNode = SKCameraNode()
     let cameraMovePointsPerSec: CGFloat = 200.0
+    let livesLabel = SKLabelNode(fontNamed: "Glimstick")
+    let catsLabel = SKLabelNode(fontNamed: "Glimstick")
 
     override init(size : CGSize) {
         let maxAspectRatio:CGFloat = 16.0/9.0 // 1
@@ -90,6 +89,26 @@ class GameScene: SKScene {
         camera = cameraNode
         //cameraNode.position = CGPoint(x: size.width/2, y: size.height/2)
         setCameraPosition(CGPoint(x: size.width/2, y: size.height/2))
+        
+        livesLabel.text = "Lives: X"
+        livesLabel.fontColor = SKColor.blackColor()
+        livesLabel.fontSize = 100
+        livesLabel.zPosition = 100
+        livesLabel.horizontalAlignmentMode = .Left
+        livesLabel.verticalAlignmentMode = .Bottom
+        livesLabel.position = CGPoint(x: -playableRect.size.width/2 + CGFloat(20),
+            y: -playableRect.size.height/2 + CGFloat(20) + overlapAmount()/2)
+        
+        catsLabel.text = "Cats: X"
+        catsLabel.fontColor = SKColor.blackColor()
+        catsLabel.fontSize = 100
+        catsLabel.zPosition = 100
+        catsLabel.horizontalAlignmentMode = .Right
+        catsLabel.verticalAlignmentMode = .Bottom
+        catsLabel.position = CGPoint(x: playableRect.size.width/2 - CGFloat(20),
+            y: -playableRect.size.height/2 + CGFloat(20) + overlapAmount()/2)
+        cameraNode.addChild(livesLabel)
+        cameraNode.addChild(catsLabel)
     }
 
     override func update(currentTime: NSTimeInterval) {
@@ -383,6 +402,8 @@ class GameScene: SKScene {
             
             view?.presentScene(gameOverScene, transition: reveal)
         }
+        livesLabel.text = "Lives: \(lives)"
+        catsLabel.text = "Cats: \(trainCount)"
     }
     
     func loseCats(){

@@ -21,6 +21,7 @@
 		35F723E61B8F5B5E006ED4AC /* MyUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F723E51B8F5B5E006ED4AC /* MyUtils.swift */; };
 		4C1D2FC01D525AB30000B3A2 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1D2FBF1D525AB30000B3A2 /* GameOverScene.swift */; };
 		4C321B321D53390300073BA9 /* MainMenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C321B311D53390300073BA9 /* MainMenuScene.swift */; };
+		4CA3D70E1D54E04D00972E30 /* GLIMSTIC.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 4CA3D70D1D54E04D00972E30 /* GLIMSTIC.TTF */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		35F723E51B8F5B5E006ED4AC /* MyUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyUtils.swift; sourceTree = "<group>"; };
 		4C1D2FBF1D525AB30000B3A2 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		4C321B311D53390300073BA9 /* MainMenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainMenuScene.swift; path = ../MainMenuScene.swift; sourceTree = "<group>"; };
+		4CA3D70D1D54E04D00972E30 /* GLIMSTIC.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = GLIMSTIC.TTF; path = ../GLIMSTIC.TTF; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,8 +83,9 @@
 				351471551B8E117E0022F82C /* Main.storyboard */,
 				351471581B8E117E0022F82C /* Assets.xcassets */,
 				3514715A1B8E117E0022F82C /* LaunchScreen.storyboard */,
-				3514715D1B8E117E0022F82C /* Info.plist */,
 				35F723E51B8F5B5E006ED4AC /* MyUtils.swift */,
+				4CA3D70D1D54E04D00972E30 /* GLIMSTIC.TTF */,
+				3514715D1B8E117E0022F82C /* Info.plist */,
 			);
 			path = ZombieConga;
 			sourceTree = "<group>";
@@ -157,6 +160,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CA3D70E1D54E04D00972E30 /* GLIMSTIC.TTF in Resources */,
 				3514715C1B8E117E0022F82C /* LaunchScreen.storyboard in Resources */,
 				3589CEC91B90BC58004968E4 /* win.wav in Resources */,
 				3589CEC61B90BC58004968E4 /* hitCat.wav in Resources */,

@@ -1,3 +1,10 @@
+//
+//  GameScene.swift
+//  ZombieConga
+//
+//  Created by unknown-macbook on 6/25/16.
+//  Copyright (c) 2016 indietarhouni.com. All rights reserved.
+//
 
 import Foundation
 import SpriteKit
